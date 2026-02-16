@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Glossary</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Team Glossary</h1>
+
+      <form id="glossary-form" class="glossary-form">
+        <label for="term-input">Term</label>
+        <input id="term-input" name="term" type="text" placeholder="e.g. MVP" required />
+
+        <label for="definition-input">Definition</label>
+        <input
+          id="definition-input"
+          name="definition"
+          type="text"
+          placeholder="e.g. Minimum Viable Product"
+          required
+        />
+
+        <button type="submit">Add</button>
+      </form>
+
+      <p id="message" class="message" aria-live="polite"></p>
+
+      <ul id="glossary-list" class="glossary-list"></ul>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
