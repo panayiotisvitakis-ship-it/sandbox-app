@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glossary App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Glossary App</h1>
+      <form id="entry-form" class="entry-form">
+        <input type="hidden" id="entry-id" />
+        <label>
+          Term
+          <input id="term" name="term" type="text" placeholder="e.g. API" required />
+        </label>
+        <label>
+          Definition
+          <textarea
+            id="definition"
+            name="definition"
+            rows="4"
+            placeholder="Write a concise definition"
+            required
+          ></textarea>
+        </label>
+        <div class="actions">
+          <button id="save-button" type="submit">Save Entry</button>
+          <button id="cancel-button" type="button" class="secondary" hidden>Cancel Edit</button>
+        </div>
+      </form>
+
+      <section>
+        <h2>Saved Entries</h2>
+        <ul id="entry-list" class="entry-list" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
