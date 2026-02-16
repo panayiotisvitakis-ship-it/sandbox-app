@@ -29,7 +29,7 @@ function saveEntries() {
 function clearForm() {
   entryIdInput.value = '';
   form.reset();
-  saveButton.textContent = 'Save Entry';
+  saveButton.textContent = 'Save';
   cancelButton.hidden = true;
 }
 
@@ -80,6 +80,16 @@ form.addEventListener('submit', (event) => {
   }
 
   const currentId = entryIdInput.value;
+  const normalizedTerm = term.toLowerCase();
+  const hasDuplicateTerm = entries.some(
+    (entry) => entry.id !== currentId && entry.term.toLowerCase() === normalizedTerm,
+  );
+
+  if (hasDuplicateTerm) {
+    window.alert('An entry with this term already exists.');
+    termInput.focus();
+    return;
+  }
 
   if (currentId) {
     entries = entries.map((entry) =>

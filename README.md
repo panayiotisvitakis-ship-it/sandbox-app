@@ -16,3 +16,4 @@ Then open `http://localhost:4173`.
 - Edit any saved entry and save updates
 - Delete saved entries
 - Entries persist in local storage
+- Terms must be unique (no duplicate terms allowed)
