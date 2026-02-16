@@ -110,6 +110,11 @@ entryList.addEventListener('click', (event) => {
   }
 
   if (action === 'delete') {
+    const shouldDelete = window.confirm('Delete this entry? This action cannot be undone.');
+    if (!shouldDelete) {
+      return;
+    }
+
     entries = entries.filter((entry) => entry.id !== id);
     saveEntries();
     renderEntries();
